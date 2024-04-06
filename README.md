@@ -1,0 +1,1 @@
+Yay, a React app!
