@@ -21,19 +21,15 @@ function MyApp() {
     promise
       .then(response => {
         if (response.status === 200 || response.status === 204) {
-          // Deletion successful, update frontend state
           const updatedCharacters = characters.filter(character => character.id !== id);
           setCharacters(updatedCharacters);
         } else if (response.status === 404) {
-          // User not found, handle accordingly
           console.log('User not found.');
         } else {
-          // Handle other error cases
           console.log('Error deleting user.');
         }
       })
       .catch(error => {
-        // Handle network or other fetch errors
         console.error('Error deleting user:', error);
       });
   }

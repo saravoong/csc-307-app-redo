@@ -118,9 +118,9 @@ const deleteUser = (userId) => {
   const index = users["users_list"].findIndex(user => user.id === userId);
   if (index !== -1) {
     users["users_list"].splice(index, 1);
-    return true; // Indicate successful deletion
+    return true; 
   }
-  return false; // Indicate user not found
+  return false; 
 };
 
 const idGenerator = () => {
