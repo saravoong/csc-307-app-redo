@@ -13,8 +13,8 @@ function MyApp() {
   //   setCharacters(updated);
   // }
 
-  function removeOneCharacter(id) {
-    const promise = fetch(`http://localhost:8000/users/${id}`, {
+  function removeOneCharacter(_id) {
+    const promise = fetch(`http://localhost:8000/users/${_id}`, {
       method: "DELETE"
     });
   
@@ -22,7 +22,7 @@ function MyApp() {
       .then(response => {
         if (response.status === 200 || response.status === 204) {
           // Deletion successful, update frontend state
-          const updatedCharacters = characters.filter(character => character.id !== id);
+          const updatedCharacters = characters.filter(character => character._id !== _id);
           setCharacters(updatedCharacters);
         } else if (response.status === 404) {
           // User not found, handle accordingly
